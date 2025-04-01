@@ -1,35 +1,93 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header>
+        <div className="logo_container">
+          <a href="#"><img className="myntra_home" src="images/My_Sitelogo.jpg" alt="My_Ecommerce Home" /></a>
+        </div>
+        <nav className="nav_bar">
+          <a href="#">Men</a>
+          <a href="#">Women</a>
+          <a href="#">Kids</a>
+          <a href="#">Home & Living</a>
+          <a href="#">Beauty</a>
+          <a href="#">Studio <sup>New</sup></a>
+        </nav>
+        <div className="search_bar">
+          <span className="material-symbols-outlined search_icon">search</span>
+          <input className="search_input" placeholder="Search for products, brands and more" />
+        </div>
+        <div className="action_bar">
+          <div className="action_container">
+            <span className="material-symbols-outlined action_icon">person</span>
+            <span className="action_name">Profile</span>
+          </div>
+
+          <div className="action_container">
+            <span className="material-symbols-outlined action_icon">favorite</span>
+            <span className="action_name">Wishlist</span>
+          </div>
+
+          <a className="action_container" href="pages/bag.html">
+            <span className="material-symbols-outlined action_icon">shopping_bag</span>
+            <span className="action_name">Bag</span>
+            <span className="bag-item-count">0</span>
+          </a>
+        </div>
+      </header>
+      <main>
+        <div className="items-container">
+        </div>
+      </main>
+      <footer>
+        <div className="footer_container">
+          <div className="footer_column">
+            <h3>ONLINE SHOPPING</h3>
+
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Home & Living</a>
+            <a href="#">Beauty</a>
+            <a href="#">Gift Card</a>
+            <a href="#">Myntra Insider</a>
+          </div>
+
+          <div className="footer_column">
+            <h3>ONLINE SHOPPING</h3>
+
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Home & Living</a>
+            <a href="#">Beauty</a>
+            <a href="#">Gift Card</a>
+            <a href="#">Myntra Insider</a>
+          </div>
+
+          <div className="footer_column">
+            <h3>ONLINE SHOPPING</h3>
+
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Home & Living</a>
+            <a href="#">Beauty</a>
+            <a href="#">Gift Card</a>
+            <a href="#">Myntra Insider</a>
+          </div>
+        </div>
+        <hr />
+
+        <div className="copyright">
+          © 2023 www.myntra.com. All rights reserved.
+        </div>
+      </footer>
     </>
   )
 }
 
-export default App
+export default App;
