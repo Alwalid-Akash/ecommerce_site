@@ -36,7 +36,6 @@ const BagSummary = () => {
         <div className="css-xjhrni">PLACE ORDER</div>
       </button>
 
-
     </div>
   )
 }
