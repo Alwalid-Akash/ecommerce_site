@@ -1,0 +1,34 @@
+🚀 Features
+🏠 Homepage: Displays a list of available items fetched from a JSON server.
+
+🛒 Bag Page: Lets users add and view items in their shopping bag.
+
+🔁 Redux Toolkit: Manages app-wide state like items, fetch status, and the shopping bag.
+
+🌐 React Router: Handles routing between pages (/, /bag).
+
+📦 Asynchronous Fetch: Loads data once from the server and caches it using Redux state.
+
+⏳ Loading Indicator: Displays a spinner while data is being fetched.
+
+🧠 Tech Stack
+React
+
+React Router DOM
+
+Redux Toolkit
+
+Vite (development server)
+
+Custom JSON API server (localhost:8080)
+
+
+src/
+├── components/         # Reusable UI components (Header, Footer, Spinner)
+├── routes/             # Page-level components (Home, Bag, App layout)
+├── store/              # Redux slices and store config
+│   ├── itemSlice.js
+│   ├── bagSlice.js
+│   └── fetchStatusSlice.js
+├── index.js            # Entry point
+├── App.jsx             # Layout + routing wrapper
