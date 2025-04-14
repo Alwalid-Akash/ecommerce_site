@@ -1,7 +1,12 @@
 // src/components/FetchmyItem.jsx
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ItemAction } from '../store/itemSlice'; // match actual file name
+import fetchStatusSlice from '../store/fetchStatusSlice';
+import { addInitialItems } from "../store/itemSlice";
+import { fetchStatusActions } from "../store/fetchStatusSlice";
+
+
+
 
 const FetchmyItem = () => {
   const fetchStatus = useSelector(store => store.fetchStatus);
@@ -12,11 +17,13 @@ const FetchmyItem = () => {
 
     const controller = new AbortController();
     const signal = controller.signal;
-
+    dispatch(fetchStatusActions.markFetchingStarted())
     fetch("http://localhost:8080/items", { signal })
       .then(res => res.json())
       .then(({ items }) => {
-        dispatch(ItemAction.addInitialItems(items));
+        dispatch(fetchStatusActions.markFetchDone());
+        dispatch(fetchStatusActions.markFetchingFinished());
+        dispatch(addInitialItems(items));
       })
       .catch(err => {
         if (err.name === "AbortError") {
@@ -32,10 +39,7 @@ const FetchmyItem = () => {
   }, [fetchStatus, dispatch]);
 
   return (
-    <div>
-      Fetch Done: {fetchStatus.fetchDone ? "Yes" : "No"} <br />
-      Currently Fetching: {fetchStatus.currentlyFetching ? "Yes" : "No"}
-    </div>
+    <></>
   );
 };
 

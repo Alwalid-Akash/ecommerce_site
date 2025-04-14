@@ -7,7 +7,7 @@ import Bag from "./routes/Bag.jsx";
 import Home from "./routes/Home";
 import { Provider } from "react-redux";
 import myStore from "./store/index.js";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 const router = createBrowserRouter([
   {
     path: "/",
